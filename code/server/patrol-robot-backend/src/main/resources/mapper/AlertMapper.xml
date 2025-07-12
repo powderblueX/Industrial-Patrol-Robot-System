@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.patrolrobotbackend.mapper.AlertMapper">
+    <!-- 基础列 -->
+    <sql id="Base_Column_List">
+        id, type, x, y, timestamp
+    </sql>
+
+    <!-- 插入警报 -->
+    <insert id="insert" parameterType="com.example.patrolrobotbackend.entity.Alert">
+        INSERT INTO alerts (type, x, y, timestamp)
+        VALUES (#{type}, #{x}, #{y}, #{timestamp})
+    </insert>
+
+    <!-- 条件查询警报 -->
+    <select id="findByCondition" resultType="com.example.patrolrobotbackend.entity.Alert">
+        SELECT <include refid="Base_Column_List"/>
+        FROM alerts
+        <where>
+            <if test="type != null and type != ''">
+                AND type = #{type}
+            </if>
+            <if test="startTime != null and endTime != null">
+                AND timestamp BETWEEN #{startTime} AND #{endTime}
+            </if>
+        </where>
+        ORDER BY timestamp DESC
+    </select>
+</mapper> 

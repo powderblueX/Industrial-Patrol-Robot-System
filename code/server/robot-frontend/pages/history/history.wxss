@@ -1,0 +1,159 @@
+/* history.wxss */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: #f6f6f6;
+}
+
+/* 筛选区域样式 */
+.filter-area {
+  background-color: #fff;
+  padding: 10px 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.filter-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.filter-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f2f2f2;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.filter-arrow {
+  font-size: 12px;
+  margin-left: 5px;
+  color: #999;
+}
+
+/* 告警列表样式 */
+.alarm-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 15px;
+}
+
+.alarm-item {
+  display: flex;
+  margin: 10px 0;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.alarm-content {
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.alarm-type {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.alarm-time {
+  font-size: 13px;
+  color: #888;
+}
+
+.empty-tip {
+  text-align: center;
+  color: #999;
+  padding: 30px 0;
+}
+
+.load-more {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.load-more-btn {
+  font-size: 14px;
+  color: #666;
+  background-color: #f6f6f6;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* 告警详情弹窗样式 */
+.alarm-detail-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}
+
+.modal-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.modal-close {
+  font-size: 22px;
+  color: #999;
+  padding: 5px;
+}
+
+.modal-body {
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.detail-item {
+  margin-bottom: 12px;
+}
+
+.detail-label {
+  color: #666;
+  margin-right: 5px;
+} 

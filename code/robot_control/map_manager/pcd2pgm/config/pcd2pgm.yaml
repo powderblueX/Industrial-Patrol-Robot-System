@@ -1,0 +1,13 @@
+pcd2pgm_node:
+  ros__parameters:
+    resolution: 0.05
+    min_points_in_pix: 1
+    max_points_in_pix: 2
+    min_height: -1.0
+    max_height: 2.0
+    input_pcd: "/home/rm/Desktop/sp_nav_25/src/map_manager/pcd/map.pcd"
+    dest_directory: "/home/rm/Desktop/sp_nav_25/src/nav2/maps"
+    output_pgm_name: "map"
+    theta_threshold: 10000.0
+    sphere_radius: 0.2
+    

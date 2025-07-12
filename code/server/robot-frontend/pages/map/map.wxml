@@ -1,0 +1,66 @@
+<!-- map.wxml -->
+<view class="container" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+  <!-- 地图容器，应用变换 -->
+  <view class="map-viewport" 
+        style="transform: translate({{mapTransform.translateX}}px, {{mapTransform.translateY}}px) scale({{mapTransform.scale}}); transition: {{isManualControl ? 'none' : 'transform 0.3s ease-out'}};">
+    
+    <!-- 地图背景 -->
+    <view class="map-background">
+      <image src="/images/map.jpg" mode="aspectFill" class="map-image"></image>
+    </view>
+    
+    <!-- 机器人位置标记 -->
+    <view class="robot-marker" style="left: {{robotPosition.x}}px; top: {{robotPosition.y}}px;">
+      <image src="/images/robot.png" mode="aspectFit"></image>
+      <!-- 机器人周围的视野圈 -->
+      <view class="robot-vision-circle"></view>
+    </view>
+
+    <!-- 告警信息标记 -->
+    <block wx:for="{{alerts}}" wx:key="id">
+      <view wx:if="{{item.visible}}"
+            class="alarm-marker" 
+            style="left: {{item.x}}px; top: {{item.y}}px;">
+        <!-- 告警动画图标 -->
+        <view class="alarm-icon">
+          <view class="alarm-outer-ring" style="border-color: {{item.color}}"></view>
+          <view class="alarm-middle-ring" style="border-color: {{item.color}}"></view>
+          <view class="alarm-inner-circle" style="background-color: {{item.color}}"></view>
+        </view>
+        <!-- 告警类型标签 -->
+        <view class="alarm-tag">
+          <view class="alarm-tag-dot" style="background-color: {{item.color}}"></view>
+          <text>{{item.type}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 地图控制工具栏 -->
+  <view class="map-controls">
+    <view class="control-item" catchtap="zoomIn">
+      <text class="control-icon">+</text>
+    </view>
+    <view class="control-item" catchtap="zoomOut">
+      <text class="control-icon">-</text>
+    </view>
+    <view class="control-item" catchtap="resetMap">
+      <text class="control-icon">↺</text>
+    </view>
+    <view class="control-item {{followMode ? 'active' : ''}}" catchtap="toggleFollowMode">
+      <text class="control-icon">🎯</text>
+    </view>
+  </view>
+
+  <!-- 跟随模式状态指示器 -->
+  <view class="follow-status {{followMode ? 'auto' : 'disabled'}}">
+    <text>{{followMode ? '跟随模式' : '正常视角'}}</text>
+  </view>
+
+  <!-- 连接状态指示器 -->
+  <view class="connection-status {{connected ? 'connected' : 'disconnected'}}">
+    <text>{{connected ? '已连接' : '未连接'}}</text>
+  </view>
+
+
+</view> 

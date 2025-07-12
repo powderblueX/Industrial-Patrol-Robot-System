@@ -1,0 +1,4 @@
+# EmbeddedSystemDesign
+yolo 当中为图像识别代码
+robot_control 中为机器人控制导航代码
+server 当中为服务器代码

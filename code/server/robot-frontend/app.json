@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/map/map",
+    "pages/history/history",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "机器人巡检系统",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#07c160",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/map/map",
+        "iconPath": "images/icon-map.png",
+        "text": "实时地图",
+        "selectedIconPath": "images/icon-map.png"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "iconPath": "images/icon-history.png",
+        "text": "历史告警",
+        "selectedIconPath": "images/icon-history.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "useExtendedLib": {
+    "weui": true
+  }
+}

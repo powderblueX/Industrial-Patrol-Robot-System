@@ -1,0 +1,10 @@
+pcd_target_path: "/home/rm/sp_loc_25/pcd/map.pcd"
+topic_name: "/point_cloud_raw"
+#[tx/m, ty/m, tz/m, yaw/度, pitch/度, roll/度]
+init_params: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]   #map2icp_lidar
+voxel_grid_size: 0.005
+max_score: 0.05
+height_flag: false  
+height_threshold: 15
+#点云积分次数
+max_iter: 4 
